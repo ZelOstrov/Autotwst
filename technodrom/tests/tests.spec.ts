@@ -106,7 +106,7 @@ test.describe.serial('Оформление заказа и получение е
     const pickupOptionButton = page.getByText('Самовывоз');
     await pickupOptionButton.click();
 
-    const storePickup = page.getByText(process.env.STORE_NAME_FOR_DELIVERY_OPTION);
+    const storePickup = page.getByText(process.env.STORE_NAME_FOR_DELIVERY_OPTION_TECHNODROM);
     await storePickup.click();
 
     const responsePromise = page.waitForResponse('/_apps/zakaz/place/');
