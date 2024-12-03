@@ -28,6 +28,7 @@ jobs:
           TEST_EMAIL: ${{ secrets.TEST_EMAIL }}
           TEST_NAME: ${{ secrets.TEST_NAME }}
           TEST_PHONE_NUMBER: ${{ secrets.TEST_PHONE_NUMBER }}
+          SALFETKI_ZELOSTROV: ${{ secrets.SALFETKI_ZELOSTROV }}
         working-directory: ZelOstrov
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
