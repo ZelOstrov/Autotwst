@@ -24,10 +24,11 @@ jobs:
         env:
           ENDPOINT_FOR_REPORT: ${{ secrets.ENDPOINT_FOR_REPORT }}
           MAILSAC_API_KEY: ${{ secrets.MAILSAC_API_KEY }}
-          STORE_NAME_FOR_DELIVERY_OPTION: ${{ secrets.STORE_NAME_FOR_DELIVERY_OPTION }}
+          STORE_NAME_FOR_DELIVERY_OPTION_TECHNODROM: ${{ secrets.STORE_NAME_FOR_DELIVERY_OPTION_TECHNODROM }}
           TEST_EMAIL: ${{ secrets.TEST_EMAIL }}
           TEST_NAME: ${{ secrets.TEST_NAME }}
           TEST_PHONE_NUMBER: ${{ secrets.TEST_PHONE_NUMBER }}
+          SALFETKI: ${{ secrets.SALFETKI }}
         working-directory: technodrom
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
