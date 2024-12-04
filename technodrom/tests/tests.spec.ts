@@ -80,6 +80,7 @@ test.describe.serial('Оформление заказа и получение е
 
     test('Создание заказа через интерфейс', async ({ page }) => {
     const salfetkiUrl = process.env.SALFETKI_TECHNODROM
+    console.log(salfetkiUrl)
     await page.goto(salfetkiUrl);
     await page.waitForLoadState('load');
     await page.waitForLoadState('domcontentloaded');
@@ -106,7 +107,7 @@ test.describe.serial('Оформление заказа и получение е
     await pickupOptionButton.click();
 
     const storePickup = page.getByText(process.env.STORE_NAME_FOR_DELIVERY_OPTION_TECHNODROM);
-
+    console.log(storePickup)
     await storePickup.click();
 
     const responsePromise = page.waitForResponse('/_apps/zakaz/place/');
