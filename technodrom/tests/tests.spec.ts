@@ -78,9 +78,8 @@ test('Добавление товара в корзину', async ({ page }) => 
 test.describe.serial('Оформление заказа и получение емейла', ()=>{
   let orderNumberCleaned: string;
 
-  test('Создание заказа через интерфейс', async ({ page }) => {
+    test('Создание заказа через интерфейс', async ({ page }) => {
     const salfetkiUrl = process.env.SALFETKI_TECHNODROM
-    console.log(salfetkiUrl)
     await page.goto(salfetkiUrl);
     await page.waitForLoadState('load');
     await page.waitForLoadState('domcontentloaded');
@@ -107,7 +106,6 @@ test.describe.serial('Оформление заказа и получение е
     await pickupOptionButton.click();
 
     const storePickup = page.getByText(process.env.STORE_NAME_FOR_DELIVERY_OPTION_TECHNODROM);
-    console.log(storePickup)
 
     await storePickup.click();
 
@@ -124,7 +122,7 @@ test.describe.serial('Оформление заказа и получение е
 
     expect(orderNumberCleaned, `Неверный номер заказа. Ожидаемый: ${orderId}, Полученный: ${orderNumberCleaned}`).toBe(orderId.toString());
   });
-
+  
   test('Проверка письма с подтверждением заказа на почте', async ({ page }) => { //этот тест не будет работать, если запустить его отдельно от набора тестов
     test.setTimeout(180000); // ожидание емейла максимум 3 минуты
     const requestContext = await request.newContext();
