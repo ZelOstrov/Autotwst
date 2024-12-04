@@ -85,7 +85,7 @@ test.describe.serial('Оформление заказа и получение е
   let orderNumberCleaned: string;
 
   test('Создание заказа через интерфейс', async ({ page }) => {
-    const salfetkiUrl = process.env.SALFETKI
+    const salfetkiUrl = process.env.SALFETKI_TECHNODROM
     await page.goto(salfetkiUrl);
     await page.waitForLoadState('load');
 
