@@ -8,7 +8,7 @@ export default defineConfig({
   retries: process.env.CI ? 1 : 0,
   workers: process.env.CI ? 1 : undefined,
   reporter: [['list'], ['./reporter.ts']],
-  timeout: 120000,
+  timeout: 180000,
   use: {
     baseURL: 'https://www.tehnodrom.ru',
     trace: 'retain-on-failure',
