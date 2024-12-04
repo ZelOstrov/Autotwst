@@ -29,6 +29,7 @@ jobs:
           TEST_NAME: ${{ secrets.TEST_NAME }}
           TEST_PHONE_NUMBER: ${{ secrets.TEST_PHONE_NUMBER }}
           SALFETKI_TECHNODROM: ${{ secrets.SALFETKI_TECHNODROM }}
+          ENDPOINT_FOR_REPORT_TECHNODROM: ${{ secrets.ENDPOINT_FOR_REPORT_TECHNODROM }}
         working-directory: technodrom
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
