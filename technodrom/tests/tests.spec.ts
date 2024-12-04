@@ -67,11 +67,18 @@ test('Проверка блока "Чаще всего ищут"', async ({ page
 });
 
 test('Добавление товара в корзину', async ({ page }) => {
-  const salfetkiUrl = process.env.SALFETKI_TECHNODROM
-  await page.goto(salfetkiUrl);
+    const salfetkiUrl = process.env.SALFETKI_TECHNODROM
+    await page.goto(salfetkiUrl);
+    await page.waitForLoadState('load');
+    await page.waitForLoadState('domcontentloaded');
+    await page.waitForTimeout(2000)
+    await page.reload()
+    await page.waitForTimeout(2000)
+
     await page.locator("//a[@class='button button-default add2cart']").first().click();
-  await page.waitForTimeout(2000)
-  await page.getByRole('link', { name: '22 руб.' }).click();
+    await page.waitForTimeout(2000)
+    await page.getByRole('link', { name: '22 руб.' }).click();
+    await page.waitForLoadState('load');
   await expect(page.locator('#cart-app')).toContainText('Салфетки влажные Эконом 15 шт');
 });
 
@@ -81,7 +88,6 @@ test.describe.serial('Оформление заказа и получение е
 
     test('Создание заказа через интерфейс', async ({ page }) => {
     const salfetkiUrl = process.env.SALFETKI_TECHNODROM
-    console.log(salfetkiUrl)
     await page.goto(salfetkiUrl);
     await page.waitForLoadState('load');
     await page.waitForLoadState('domcontentloaded');
