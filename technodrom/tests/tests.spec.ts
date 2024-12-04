@@ -67,7 +67,7 @@ test('Проверка блока "Чаще всего ищут"', async ({ page
 });
 
 test('Добавление товара в корзину', async ({ page }) => {
-  const salfetkiUrl = process.env.SALFETKI
+  const salfetkiUrl = process.env.SALFETKI_TECHNODROM
   await page.goto(salfetkiUrl);
   await page.getByRole('link', { name: 'Добавить в корзину' }).click();
   await page.goto('https://www.tehnodrom.ru/personal/cart/');
