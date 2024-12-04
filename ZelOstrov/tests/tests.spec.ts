@@ -89,7 +89,7 @@ test.describe.serial('Оформление заказа и получение е
   let orderNumberCleaned: string;
 
   test('Создание заказа через интерфейс', async ({ page }) => {
-    await page.goto(process.env.SALFETKI_ZELOSTROV');
+    await page.goto(process.env.SALFETKI_ZELOSTROV);
     await page.waitForLoadState('load');
 
     const addToCartButton = page.locator('a.button-default.add2cart');
