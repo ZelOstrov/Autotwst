@@ -84,7 +84,6 @@ test.describe.serial('Оформление заказа и получение е
     await page.goto(salfetkiUrl);
     await page.waitForLoadState('load');
     await page.waitForLoadState('domcontentloaded');
-    await page.waitForLoadState('networkidle');
     await page.waitForTimeout(2000)
     await page.reload()
     await page.waitForTimeout(2000)
