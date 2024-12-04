@@ -5,15 +5,12 @@ const locators = {
   productOfTheDayBlock: (page) => page.locator('.hp-main-desktop__banner-wrapper'),
   productLink: (page) => locators.productOfTheDayBlock(page).locator('a[href^="/catalog/detail/"]').first(),
   productImage: (page) => locators.productLink(page).locator('img[src^="/upload/iblock/"]').first(),
-  productPageTitle: (page) => page.locator('h1'),
   cartItem: (page) => page.locator('.cart-goods__table-element').first(),
-  cartItemName: (page) => locators.cartItem(page).locator('.cart-goods__product-name>>nth=1'),
   nameInput: (page) => page.locator('.mof__personal-individual input[type="text"]').first(),
   phoneInput: (page) => page.locator('#phone-input'),
   emailInput: (page) => page.locator('div').filter({ hasText: /^Ваш email$/ }).getByPlaceholder(' '),
   completeOrderButton: (page) => page.getByRole('link', { name: 'Завершить оформление' }),
   orderNumberElement: (page) => page.locator('.sale_order_full_table tbody tr td p b'),
-  newProductLink: (page) => page.locator('.listing-element__picture-self').first(),
 };
 
 test('Проверка доступности сайта', async ({ page }) => {
@@ -78,18 +75,16 @@ test('Добавление товара в корзину', async ({ page }) => 
 });
 
 
-
-
-
 test.describe.serial('Оформление заказа и получение емейла', ()=>{
   let orderNumberCleaned: string;
 
   test('Создание заказа через интерфейс', async ({ page }) => {
     const salfetkiUrl = process.env.SALFETKI_TECHNODROM
+    console.log(salfetkiUrl)
     await page.goto(salfetkiUrl);
     await page.waitForLoadState('load');
 
-    await page.getByRole('link', { name: 'Добавить в корзину' }).click();
+    await page.locator(".button.button-default").first().click();
     await page.waitForTimeout(2000)
     await page.getByRole('link', { name: '22 руб.' }).click();
     await page.waitForLoadState('load');
