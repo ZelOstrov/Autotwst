@@ -83,6 +83,8 @@ test.describe.serial('Оформление заказа и получение е
     console.log(salfetkiUrl)
     await page.goto(salfetkiUrl);
     await page.waitForLoadState('load');
+    await page.waitForLoadState('domcontentloaded');
+    await page.waitForLoadState('networkidle');
 
     await page.locator(".button.button-default").first().click();
     await page.waitForTimeout(2000)
