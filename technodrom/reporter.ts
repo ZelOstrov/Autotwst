@@ -30,7 +30,7 @@ class MyReporter implements Reporter {
     }
 
     async onEnd(result: FullResult) {
-        const endpoint = process.env.ENDPOINT_FOR_REPORT;
+        const endpoint = process.env.ENDPOINT_FOR_REPORT_TECHNODROM;
         const requestContext = await request.newContext();
 
         try {
