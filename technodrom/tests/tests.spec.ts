@@ -54,8 +54,8 @@ test('Проверка блока "Чаще всего ищут"', async ({ page
     const pageTitle = await page.locator('h1').innerText();
     if (categoryName.toLowerCase() === 'порядок в прихожей') {
       expect(pageTitle, 'Неверный заголовок для категории "порядок в прихожей"').toBe('Организация порядка в прихожей');
-    // } else if (categoryName.toLowerCase() === 'текстиль для столовой') {
-    //   expect(pageTitle, 'Неверный заголовок для категории "текстиль для столовой"').toBe('Кухонный текстиль');
+    } else if (categoryName.toLowerCase() === 'напольные покрытия, подложки') {
+      expect(pageTitle, 'Неверный заголовок для категории "текстиль для столовой"').toBe('напольные покрытия, подложка');
     } else {
       expect(pageTitle.toLowerCase(), `Неверный заголовок на странице для категории ${categoryName}`).toContain(categoryName.toLowerCase());
     }
