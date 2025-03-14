@@ -58,6 +58,8 @@ test('Проверка блока "Чаще всего ищут"', async ({ page
       expect(pageTitle, 'Неверный заголовок для категории "порядок в прихожей"').toBe('Организация порядка в прихожей');
     } else if (categoryName.toLowerCase() === 'сад и огород') {
       expect(pageTitle, 'Неверный заголовок для категории "текстиль для столовой"').toBe('сад и дача');
+    } else if (categoryName.toLowerCase() === 'сад и дача') {
+      expect(pageTitle, 'Неверный заголовок для категории "текстиль для столовой"').toBe('Сад и дача');
     } else {
       expect(pageTitle.toLowerCase(), `Неверный заголовок на странице для категории ${categoryName}`).toContain(categoryName.toLowerCase());
     }
