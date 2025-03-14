@@ -59,7 +59,7 @@ test('Проверка блока "Чаще всего ищут"', async ({ page
     } else if (categoryName.toLowerCase() === 'пена, герметики') {
       expect(pageTitle, 'Неверный заголовок для категории "текстиль для столовой"').toBe('пены, герметики, клеи');
     } else {
-      expect(pageTitle.toLowerCase(), Неверный заголовок на странице для категории ${categoryName}).toContain(categoryName.toLowerCase());
+      expect(pageTitle.toLowerCase()).toContain(categoryName.toLowerCase(), `Неверный заголовок на странице для категории ${categoryName}`);
     }
 
     if (i < 7) {
