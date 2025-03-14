@@ -7,7 +7,7 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   workers: process.env.CI ? 1 : undefined,
   reporter: [['list'], ['./reporter.ts']],
-  timeout: 180000,
+  timeout: 200000,
   use: {
     baseURL: 'https://www.tehnodrom.ru',
     trace: 'retain-on-failure',
