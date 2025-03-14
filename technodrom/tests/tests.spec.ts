@@ -57,7 +57,7 @@ test('Проверка блока "Чаще всего ищут"', async ({ page
     } else if (categoryName.toLowerCase() === 'напольные покрытия, подложки') {
       expect(pageTitle, 'Неверный заголовок для категории "текстиль для столовой"').toBe('Напольные покрытия, подложка');
     } else if (categoryName.toLowerCase() === 'пена, герметики') {
-      expect(pageTitle, 'Неверный заголовок для категории "текстиль для столовой"').toBe('пены, герметики, клеи');
+      expect(pageTitle, 'Неверный заголовок для категории "текстиль для столовой"').toBe('Пены, герметики, клеи');
     } else {
       expect(pageTitle.toLowerCase()).toContain(categoryName.toLowerCase(), `Неверный заголовок на странице для категории ${categoryName}`);
     }
