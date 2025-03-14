@@ -52,16 +52,14 @@ test('Проверка блока "Чаще всего ищут"', async ({ page
     await page.waitForLoadState('load');
 
     const pageTitle = await page.locator('h1').innerText();
-    
     if (categoryName.toLowerCase() === 'порядок в прихожей') {
-      expect(pageTitle, 'Неверный заголовок для категории "порядок в прихожей"').toContain('Организация порядка в прихожей');
+      expect(pageTitle, 'Неверный заголовок для категории "порядок в прихожей"').toBe('Организация порядка в прихожей');
     } else if (categoryName.toLowerCase() === 'напольные покрытия, подложки') {
-      expect(pageTitle, 'Неверный заголовок для категории "напольные покрытия, подложки"').toContain('Напольные покрытия');
-    } else if (categoryName.toLowerCase() === 'пены, герметики, клеи') {
-      expect(pageTitle, 'Неверный заголовок для категории "пены, герметики, клеи"').toContain('пена');
-      expect(pageTitle, 'Неверный заголовок для категории "пены, герметики, клеи"').toContain('герметики');
+      expect(pageTitle, 'Неверный заголовок для категории "текстиль для столовой"').toBe('Напольные покрытия, подложка');
+    } else if (categoryName.toLowerCase() === 'пены, герметики') {
+      expect(pageTitle, 'Неверный заголовок для категории "текстиль для столовой"').toBe('пены, герметики, клеи');
     } else {
-      expect(pageTitle.toLowerCase(), `Неверный заголовок на странице для категории ${categoryName}`).toContain(categoryName.toLowerCase().split(',')[0].trim());
+      expect(pageTitle.toLowerCase(), Неверный заголовок на странице для категории ${categoryName}).toContain(categoryName.toLowerCase());
     }
 
     if (i < 7) {
