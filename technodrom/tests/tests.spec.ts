@@ -56,6 +56,8 @@ test('Проверка блока "Чаще всего ищут"', async ({ page
       expect(pageTitle, 'Неверный заголовок для категории "порядок в прихожей"').toBe('Организация порядка в прихожей');
     } else if (categoryName.toLowerCase() === 'напольные покрытия, подложки') {
       expect(pageTitle, 'Неверный заголовок для категории "текстиль для столовой"').toBe('Напольные покрытия, подложка');
+    } else if (categoryName.toLowerCase() === 'пены, герметики, клеи') {
+      expect(pageTitle, 'Неверный заголовок для категории "текстиль для столовой"').toBe('пена, герметики');
     } else {
       expect(pageTitle.toLowerCase(), `Неверный заголовок на странице для категории ${categoryName}`).toContain(categoryName.toLowerCase());
     }
