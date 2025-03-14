@@ -79,7 +79,7 @@ test('Добавление товара в корзину', async ({ page }) => 
 
     await page.locator("//a[@class='button button-default add2cart']").first().click();
     await page.waitForTimeout(2000)
-    await page.getByRole('link', { name: '22 руб.' }).click();
+    await page.getByRole('link', { name: '25 руб.' }).click();
     await page.waitForLoadState('load');
   await expect(page.locator('#cart-app')).toContainText('Салфетки влажные Эконом 15 шт');
 });
@@ -99,7 +99,7 @@ test.describe.serial('Оформление заказа и получение е
 
     await page.locator("//a[@class='button button-default add2cart']").first().click();
     await page.waitForTimeout(2000)
-    await page.getByRole('link', { name: '22 руб.' }).click();
+    await page.getByRole('link', { name: '25 руб.' }).click();
     await page.waitForLoadState('load');
     await page.getByRole('link', { name: 'Завершить оформление' })
     const placeOrderButton = page.getByRole('link', { name: 'Оформить заказ' })
